@@ -1,154 +1,60 @@
-# EasyFix Services - Site Web Professionnel
+# EasyFix Services - Site Web
 
-## 🚀 Nouveautés et Améliorations
+Site web professionnel pour EasyFix Services, entreprise de plomberie en Île-de-France.
 
-### ✨ Modifications Récentes (Suite à la réunion client)
+## 🏗️ Description
 
-#### 1. **Services Renommés et Améliorés**
-- **Pack Easy** (anciennement Bronze) - Services de base
-- **Pack EasyGo** (anciennement Argent) - Services intermédiaires  
-- **Pack EasyFix** (anciennement Or) - Services premium
-- Remplacement de "Douche à l'italienne" par "Peinture, Sol et Isolation"
-- Ajout de boutons d'action sur chaque service : "Prix" et "Prendre RDV"
-
-#### 2. **Nouvelle Section Assurance**
-- Expertise en collaboration avec les compagnies d'assurance
-- Gestion des sinistres et dégâts des eaux
-- Partenariats avec MAIF, AXA, Groupama, Allianz, Crédit Agricole
-- Accompagnement complet des démarches administratives
-
-#### 3. **Amélioration de l'Expérience Utilisateur**
-- Boutons "Prendre RDV" au lieu de "Demander un devis"
-- Boutons "Prix" au lieu de "En savoir plus"
-- Navigation améliorée avec lien vers la section Assurance
-- Fallback Calendly en cas de problème de chargement
-
-#### 4. **Correction des Bugs**
-- Amélioration de l'affichage Calendly
-- Gestion des erreurs de chargement
-- Interface responsive optimisée
-
-## 🛠️ Technologies Utilisées
-
-- **Frontend** : HTML5, CSS3, JavaScript ES6+
-- **Design** : Design moderne et responsive
-- **Intégration** : Calendly pour les rendez-vous
-- **Icons** : Font Awesome 6.0
-- **Fonts** : Inter (Google Fonts)
-
-## 📱 Fonctionnalités Principales
-
-### 🏠 **Services Plomberie**
-- Installation sanitaire complète
+Ce site web présente les services de plomberie d'EasyFix Services, incluant :
+- Installation sanitaire
 - Entretien et maintenance
 - Dépannage d'urgence
-- Rénovation et transformation
+- Rénovation complète
+- Partenariat avec les assurances
 
-### 📅 **Système de Rendez-vous**
-- Intégration Calendly
-- Créneaux en temps réel
-- Confirmation automatique
-- Fallback en cas de problème
+## 🚀 Technologies utilisées
 
-### 🛡️ **Partnership Assurances**
-- Expertise technique
-- Constats de dégâts
-- Suivi administratif
-- Partenariats établis
+- HTML5
+- CSS3 (avec animations et design responsive)
+- JavaScript vanilla
+- Font Awesome pour les icônes
+- Google Fonts (Inter)
+- Intégration Calendly pour la prise de rendez-vous
 
-### 💰 **Packs d'Entretien**
-- **Easy** : Services de base
-- **EasyGo** : Services intermédiaires
-- **EasyFix** : Services premium
+## 📱 Fonctionnalités
 
-## 🚀 Installation et Démarrage
+- Design responsive et moderne
+- Navigation intuitive avec menu déroulant
+- Sections détaillées pour chaque service
+- Galerie de réalisations
+- Système de réservation intégré
+- Formulaire de contact
+- Optimisé pour le référencement (SEO)
 
-### Prérequis
-- Serveur web (Apache, Nginx, ou serveur local)
-- Navigateur moderne
+## 🌐 Hébergement
 
-### Installation Rapide
-```bash
-# Cloner le projet
-git clone [URL_DU_REPO]
+Ce site est hébergé sur GitHub Pages et accessible via l'URL : [votre-url-github-pages]
 
-# Ouvrir dans un navigateur
-# Ou démarrer un serveur local
-python3 -m http.server 8000
-# Puis ouvrir http://localhost:8000
-```
+## 📞 Contact
 
-## ⚙️ Configuration
-
-### Calendly
-1. Créer un compte sur [calendly.com](https://calendly.com)
-2. Configurer vos disponibilités
-3. Remplacer l'URL dans `index.html` ligne 462
-4. Tester l'intégration
-
-### Personnalisation
-- Modifier les informations de contact dans `index.html`
-- Ajuster les couleurs dans `styles.css`
-- Personnaliser les services et packs
-
-## 📁 Structure du Projet
-
-```
-terminator5/
-├── index.html              # Page principale
-├── styles.css              # Styles CSS
-├── script.js               # JavaScript
-├── README.md               # Documentation
-├── CALENDLY-SETUP.md       # Guide Calendly
-├── DEPLOYMENT-GUIDE.md     # Guide déploiement
-├── QUICK-START.md          # Démarrage rapide
-└── IMAGE-GUIDE.md          # Guide images
-```
-
-## 🎨 Personnalisation
-
-### Couleurs Principales
-- **Bleu principal** : #0066FF
-- **Bleu secondaire** : #0052CC
-- **Gris clair** : #f8f9ff
-- **Texte** : #333
-
-### Typographie
-- **Police principale** : Inter (Google Fonts)
-- **Tailles** : Responsive et adaptatives
-
-## 📱 Responsive Design
-
-Le site s'adapte automatiquement à tous les écrans :
-- **Desktop** : Affichage complet
-- **Tablet** : Adaptation des grilles
-- **Mobile** : Navigation hamburger, contenu optimisé
-
-## 🔧 Maintenance
-
-### Mises à jour régulières
-- Vérification des liens Calendly
-- Test des formulaires
-- Optimisation des performances
-- Mise à jour des informations
-
-### Support
-- **Email** : contact@easyfix-services.fr
 - **Téléphone** : 07 45 28 65 35
-- **Site** : www.easyfixservices.fr
+- **Email** : contact@easyfix-services.fr
+- **Site web** : www.easyfixservices.fr
+- **Zone d'intervention** : Île-de-France
 
-## 📈 Optimisations Futures
+## 📋 Installation locale
 
-- [ ] Intégration d'un système de devis en ligne
-- [ ] Chat en direct pour le support
-- [ ] Système de témoignages clients
-- [ ] Blog technique et conseils
-- [ ] Intégration avec des outils de gestion
+1. Clonez ce dépôt
+2. Ouvrez `index.html` dans votre navigateur
+3. Ou utilisez un serveur local pour le développement
 
-## 📄 Licence
+## 🔧 Développement
 
-© 2024 EasyFix Services. Tous droits réservés.
+Pour modifier le site :
+- Éditez les fichiers HTML, CSS ou JavaScript
+- Testez localement
+- Committez et poussez les changements
+- Le site se mettra à jour automatiquement sur GitHub Pages
 
 ---
 
-**EasyFix Services** - Votre confort, notre mission ! 🛠️✨ 
+© 2024 EasyFix Services. Tous droits réservés. 
