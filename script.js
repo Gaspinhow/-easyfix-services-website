@@ -1,44 +1,153 @@
-// Mobile Menu Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            const targetPosition = target.offsetTop - headerHeight;
+// Mobile Menu Toggle - Simplified and Fixed
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM chargé');
+    
+    // Mobile menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (hamburger && navMenu) {
+        console.log('Éléments trouvés, ajout des événements');
+        
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Hamburger cliqué!');
             
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
+            // Toggle active class
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            
+            // Debug
+            console.log('Hamburger active:', this.classList.contains('active'));
+            console.log('Nav menu active:', navMenu.classList.contains('active'));
+            console.log('Nav menu classes:', navMenu.className);
+            console.log('Nav menu style:', navMenu.style.cssText);
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('Lien cliqué, fermeture du menu');
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
             });
-        }
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                console.log('Clic à l\'extérieur, fermeture du menu');
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // Close menu with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                console.log('Touche Escape, fermeture du menu');
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+        
+    } else {
+        console.error('Éléments manquants!');
+        console.error('Hamburger:', hamburger);
+        console.error('Nav menu:', navMenu);
+    }
+    
+    // Dropdown menu toggle for "Nos Services"
+    const dropdownToggle = document.querySelector('.nav-item.dropdown .nav-link');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    
+    if (dropdownToggle && dropdownMenu) {
+        console.log('Dropdown trouvé, ajout des événements');
+        
+        dropdownToggle.addEventListener('click', function(e) {
+            // Ne pas ouvrir le dropdown sur mobile
+            if (window.innerWidth <= 850) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Dropdown cliqué sur mobile - ignoré');
+                return;
+            }
+            
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Dropdown cliqué!');
+            
+            const dropdownItem = this.closest('.nav-item');
+            dropdownItem.classList.toggle('dropdown-open');
+            
+            console.log('Dropdown ouvert:', dropdownItem.classList.contains('dropdown-open'));
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                const dropdownItem = dropdownToggle.closest('.nav-item');
+                dropdownItem.classList.remove('dropdown-open');
+            }
+        });
+        
+        // Close dropdown with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const dropdownItem = dropdownToggle.closest('.nav-item');
+                dropdownItem.classList.remove('dropdown-open');
+            }
+        });
+    }
+    
+    // Smooth scrolling for anchor links
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 });
 
-// Header background change on scroll
+// Force header to stay blue - NO COLOR CHANGES
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.querySelector('.header');
+    if (header) {
+        header.style.background = 'linear-gradient(135deg, #0066FF 0%, #0052CC 100%)';
+        header.style.setProperty('background', 'linear-gradient(135deg, #0066FF 0%, #0052CC 100%)', 'important');
+    }
+});
+
+// Keep header blue on scroll - NO COLOR CHANGES
 window.addEventListener('scroll', () => {
     const header = document.querySelector('.header');
-    if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
-    } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    if (header) {
+        header.style.background = 'linear-gradient(135deg, #0066FF 0%, #0052CC 100%)';
+        header.style.setProperty('background', 'linear-gradient(135deg, #0066FF 0%, #0052CC 100%)', 'important');
+    }
+});
+
+// Force header blue on window resize
+window.addEventListener('resize', () => {
+    const header = document.querySelector('.header');
+    if (header) {
+        header.style.background = 'linear-gradient(135deg, #0066FF 0%, #0052CC 100%)';
+        header.style.setProperty('background', 'linear-gradient(135deg, #0066FF 0%, #0052CC 100%)', 'important');
     }
 });
 
@@ -325,11 +434,11 @@ function debounce(func, wait) {
 const debouncedScrollHandler = debounce(() => {
     const header = document.querySelector('.header');
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+        header.style.background = 'linear-gradient(135deg, rgba(0, 102, 255, 0.95) 0%, rgba(0, 82, 204, 0.95) 100%)';
+        header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
     } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        header.style.background = 'linear-gradient(135deg, #0066FF 0%, #0052CC 100%)';
+        header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.2)';
     }
 }, 10);
 
