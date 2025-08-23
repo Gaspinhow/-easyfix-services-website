@@ -1744,6 +1744,24 @@ body {
     box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
 }
 
+.price-amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0066FF;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 102, 255, 0.1);
+}
+
+.price-includes {
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    padding: 0 1rem;
+}
+
 .price-features {
     list-style: none;
     padding: 0;
