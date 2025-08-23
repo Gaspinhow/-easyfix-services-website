@@ -737,6 +737,7 @@ body {
     gap: 2rem;
     position: relative;
     z-index: 1;
+    align-items: stretch;
 }
 
 .service-card {
@@ -750,6 +751,9 @@ body {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card::before {
@@ -1938,12 +1942,14 @@ body {
 
 /* Service Actions */
 .service-actions {
-    margin-top: 2rem;
+    margin-top: auto;
     display: flex;
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
+    width: 100%;
+    padding-top: 2rem;
 }
 
 .service-actions .btn {
@@ -1962,6 +1968,8 @@ body {
     width: 160px;
     height: 50px;
     flex-shrink: 0;
+    box-sizing: border-box;
+    margin: 0;
 }
 
 .service-actions .btn::before {
@@ -1985,6 +1993,8 @@ body {
     color: white;
     border: 2px solid #0066FF;
     box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+    line-height: 1;
+    vertical-align: middle;
 }
 
 .service-actions .btn-primary:hover {
@@ -1999,6 +2009,8 @@ body {
     color: #0066FF;
     border: 2px solid #0066FF;
     position: relative;
+    line-height: 1;
+    vertical-align: middle;
 }
 
 .service-actions .btn-outline::after {
