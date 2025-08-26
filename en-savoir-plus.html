@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>En savoir plus - EasyFix Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Reset et styles de base pour éviter les conflits */
         * {
@@ -282,25 +283,56 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <div class="logo">
-                    <img src="images/easyfix-logo.png" alt="EasyFix Services Logo" class="logo-img">
+        <nav class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="images/easyfix-logo.png" alt="Easy Fix Services Logo" class="logo-image">
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html#accueil">Accueil</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#packs">Packs</a></li>
-                    <li><a href="index.html#about">Qui sommes-nous ?</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-                <div class="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
-        </div>
+            </div>
+            <ul class="nav-menu" id="primary-navigation">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#accueil">Accueil</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="index.html#services">Nos Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#installation">Installation Sanitaire</a></li>
+                        <li><a href="index.html#entretien">Entretien</a></li>
+                        <li><a href="index.html#depannage">Dépannage</a></li>
+                        <li><a href="index.html#renovation">Rénovation</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#packs">Packs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#qui-sommes-nous">Qui sommes-nous ?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#assurance">Assurances</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#realisations">Nos Réalisations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#booking">Rendez-vous</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html#contact">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-contact">
+                <a class="phone-btn" href="tel:0745286535">
+                    <i class="fas fa-phone"></i>
+                    07 45 28 65 35
+                </a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
     </header>
 
     <!-- Main Content -->
@@ -471,8 +503,8 @@
                 <p>&copy; 2024 EasyFix Services. Tous droits réservés.</p>
             </div>
         </div>
-    </footer>
+        </footer>
 
-
+    <script src="script.js"></script>
 </body>
 </html> 
