@@ -2723,3 +2723,324 @@ body {
         font-size: 0.7rem;
     }
 }
+
+/* Styles pour la page "En savoir plus" */
+.en-savoir-plus-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.en-savoir-plus-section .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.en-savoir-plus-section .section-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.en-savoir-plus-section .section-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.back-button-container {
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0066FF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    background: rgba(0, 102, 255, 0.1);
+    border: 2px solid rgba(0, 102, 255, 0.2);
+}
+
+.back-button:hover {
+    color: #0052CC;
+    background: rgba(0, 102, 255, 0.15);
+    border-color: rgba(0, 102, 255, 0.3);
+    transform: translateX(-5px);
+}
+
+.pack-detail-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-left: 6px solid #0066FF;
+    transition: all 0.3s ease;
+}
+
+.pack-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.pack-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.pack-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.pack-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0066FF;
+    background: linear-gradient(135deg, #e7f3ff 0%, #d1e9ff 100%);
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    border: 2px solid rgba(0, 102, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 102, 255, 0.1);
+}
+
+.pack-description {
+    margin-bottom: 2rem;
+}
+
+.pack-description p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pack-services {
+    margin-bottom: 2rem;
+}
+
+.pack-services h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pack-services h3::before {
+    content: "🔧";
+    font-size: 1.2rem;
+}
+
+.pack-services ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.pack-services li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border-left: 4px solid #28a745;
+    transition: all 0.3s ease;
+}
+
+.pack-services li:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.pack-services li i {
+    color: #28a745;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.pack-recommendations {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    border: 2px solid #e9ecef;
+}
+
+.pack-recommendations h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pack-recommendations h3::before {
+    content: "💡";
+    font-size: 1.1rem;
+}
+
+.pack-recommendations p {
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.pack-actions {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pack-actions .btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 180px;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pack-actions .btn-primary {
+    background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
+}
+
+.pack-actions .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 102, 255, 0.4);
+    background: linear-gradient(135deg, #0052CC 0%, #004099 100%);
+}
+
+.pack-actions .btn-outline {
+    background: transparent;
+    color: #0066FF;
+    border: 2px solid #0066FF;
+    box-shadow: 0 4px 15px rgba(0, 102, 255, 0.1);
+}
+
+.pack-actions .btn-outline:hover {
+    background: #0066FF;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 102, 255, 0.3);
+}
+
+.important-info {
+    background: linear-gradient(135deg, #e7f3ff 0%, #d1e9ff 100%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 2px solid rgba(0, 102, 255, 0.2);
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.important-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0066FF;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.important-info p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsive pour la page "En savoir plus" */
+@media (max-width: 768px) {
+    .en-savoir-plus-section {
+        padding: 2rem 0;
+    }
+    
+    .en-savoir-plus-section .section-header h1 {
+        font-size: 2rem;
+    }
+    
+    .pack-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .pack-price {
+        font-size: 1.5rem;
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .pack-services ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .pack-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pack-actions .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .important-info {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pack-detail-card {
+        padding: 1.5rem;
+    }
+    
+    .pack-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .pack-price {
+        font-size: 1.3rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
+    .pack-services li {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
