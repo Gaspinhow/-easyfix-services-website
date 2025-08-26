@@ -17,12 +17,7 @@
 <nav class="nav-container">
 <div class="logo">
 <div class="logo-icon">
-<img src="images/vrailogo.jpeg" alt="Easy Fix Services Logo" class="logo-image">
-</div>
-<div class="logo-text">
-<span class="logo-line">Easy</span>
-<span class="logo-line">Fix</span>
-<span class="logo-line">Services</span>
+<img src="images/easyfix-logo.png" alt="Easy Fix Services Logo" class="logo-image">
 </div>
 </div>
 <ul class="nav-menu" id="primary-navigation">
@@ -195,46 +190,52 @@
 <div class="price-badge">Easy</div>
 <div class="price-amount">104 € TTC</div>
 <p class="price-includes">Fournitures et déplacement inclus</p>
-<ul class="price-features">
-<li>Entretien des canalisations</li>
-<li>Vérification de la robinetterie</li>
-<li>Vérification de la chasse d'eau</li>
-<li>Nettoyage des siphons</li>
-<li>Vérification des joints</li>
-</ul>
-<div class="price-actions">
-<a class="btn btn-primary" href="#contact">Prendre RDV</a>
-</div>
+                <ul class="price-features">
+                    <li>Entretien des canalisations</li>
+                    <li>Vérification de la robinetterie</li>
+                    <li>Vérification de la chasse d'eau</li>
+                    <li>Nettoyage des siphons</li>
+                    <li>Vérification des joints</li>
+                </ul>
+                <div class="price-actions">
+                    <a class="btn btn-outline" href="en-savoir-plus.html">En savoir plus</a>
+                    <a class="btn btn-primary" href="#contact">Prendre RDV</a>
+                </div>
 </div>
 <div class="price-card featured">
 <div class="price-badge">EasyGo</div>
 <div class="price-amount">177 € TTC</div>
 <p class="price-includes">Fournitures et déplacement inclus</p>
-<ul class="price-features">
-<li>Tous les services du Pack Easy</li>
-<li>Joint de salle de bain</li>
-<li>Détartrage cabine de douche ou baignoire</li>
-</ul>
-<div class="price-actions">
-<a class="btn btn-primary" href="#contact">Prendre RDV</a>
-</div>
+                <ul class="price-features">
+                    <li>Tous les services du Pack Easy</li>
+                    <li>Joint de salle de bain</li>
+                    <li>Détartrage cabine de douche ou baignoire</li>
+                </ul>
+                <div class="price-actions">
+                    <a class="btn btn-outline" href="en-savoir-plus.html">En savoir plus</a>
+                    <a class="btn btn-primary" href="#contact">Prendre RDV</a>
+                </div>
 </div>
 <div class="price-card">
 <div class="price-badge">EasyFix</div>
 <div class="price-amount">287 € TTC</div>
 <p class="price-includes">Fournitures et déplacement inclus</p>
-<ul class="price-features">
-<li>Tous les services du Pack EasyGo</li>
-<li>Entretien du ballon d'eau chaude (vidange, détartrage, contrôle)</li>
-<li>Vérification complète des installations</li>
-</ul>
-<div class="price-actions">
-<a class="btn btn-primary" href="#contact">Prendre RDV</a>
+                <ul class="price-features">
+                    <li>Tous les services du Pack EasyGo</li>
+                    <li>Entretien du ballon d'eau chaude (vidange, détartrage, contrôle)</li>
+                    <li>Vérification complète des installations</li>
+                </ul>
+                <div class="price-actions">
+                    <a class="btn btn-outline" href="en-savoir-plus.html">En savoir plus</a>
+                    <a class="btn btn-primary" href="#contact">Prendre RDV</a>
+                </div>
 </div>
-</div>
-</div>
+        </div>
 </div>
 </section>
+
+
+
 <!-- About Section -->
 <section class="about" id="qui-sommes-nous">
 <div class="container">
@@ -423,31 +424,101 @@
 </div>
 </div>
 </div>
-<div class="calendly-container">
-<div class="calendly-header">
-<h3>Sélectionnez votre créneau</h3>
-<p>Cliquez sur un créneau disponible pour réserver votre intervention</p>
-</div>
-<div class="calendly-wrapper">
-<div class="calendly-inline-widget" data-url="https://calendly.com/hamzaouakas91330" style="min-width:320px;height:700px;"></div>
-<div class="calendly-fallback" id="calendly-fallback">
-<div class="fallback-content">
-<i class="fas fa-calendar-alt"></i>
-<h4>Calendrier en cours de chargement...</h4>
-<p>Si le calendrier ne s'affiche pas, contactez-nous directement :</p>
-<div class="fallback-actions">
-<a class="btn btn-primary" href="tel:0745286535">
-<i class="fas fa-phone"></i> 07 45 28 65 35
-</a>
-<a class="btn btn-outline" href="mailto:contact@easyfix-services.fr">
-<i class="fas fa-envelope"></i> Par email
-</a>
-</div>
-</div>
-</div>
-</div>
-<script async src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-</div>
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h3>Prenez rendez-vous</h3>
+                        <p>Remplissez ce formulaire pour réserver votre intervention</p>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nom complet *</label>
+                                <input type="text" id="name" name="name" required placeholder="Votre nom complet">
+                                <div class="error-message" id="name-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                                <div class="error-message" id="email-error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Téléphone *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="07 45 28 65 35">
+                                <div class="error-message" id="phone-error"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="urgency">Urgence *</label>
+                                <select id="urgency" name="urgency" required>
+                                    <option value="">Niveau d'urgence</option>
+                                    <option value="urgent">Urgent (24h)</option>
+                                    <option value="normal">Normal (48-72h)</option>
+                                    <option value="planifie">Planifié (semaine)</option>
+                                </select>
+                                <div class="error-message" id="urgency-error"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="service">Service souhaité *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Choisissez un service</option>
+                                <optgroup label="Services principaux">
+                                    <option value="installation">Installation Sanitaire</option>
+                                    <option value="entretien">Entretien</option>
+                                    <option value="depannage">Dépannage</option>
+                                    <option value="renovation">Rénovation</option>
+                                </optgroup>
+                                <optgroup label="Packs de maintenance">
+                                    <option value="pack-easy">Pack Easy (104€)</option>
+                                    <option value="pack-easygo">Pack EasyGo (177€)</option>
+                                    <option value="pack-easyfix">Pack EasyFix (287€)</option>
+                                </optgroup>
+                            </select>
+                            <div class="error-message" id="service-error"></div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="address">Adresse d'intervention</label>
+                            <input type="text" id="address" name="address" placeholder="Votre adresse complète">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Détails de l'intervention *</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Décrivez votre problème, vos besoins ou questions..."></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        
+
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i> 
+                                <span class="btn-text">Envoyer ma demande</span>
+                                <span class="btn-loading" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
+                                </span>
+                            </button>
+                        </div>
+                        
+                        <div class="form-success" id="formSuccess" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <h4>Demande envoyée avec succès !</h4>
+                            <p>Nous vous recontacterons dans les plus brefs délais.</p>
+                        </div>
+                        
+                        <div class="form-error" id="formError" style="display: none;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h4>Erreur lors de l'envoi</h4>
+                            <p>Veuillez réessayer ou nous contacter directement au 07 45 28 65 35</p>
+                        </div>
+                    </form>
+                </div>
 </div>
 </div>
 </section>
@@ -509,12 +580,7 @@
 <div class="footer-logo">
 <div class="logo">
 <div class="logo-icon">
-<img src="images/vrailogo.jpeg" alt="Easy Fix Services Logo" class="logo-image">
-</div>
-<div class="logo-text">
-<span class="logo-line">Easy</span>
-<span class="logo-line">Fix</span>
-<span class="logo-line">Services</span>
+<img src="images/easyfix-logo.png" alt="Easy Fix Services Logo" class="logo-image">
 </div>
 </div>
 </div>

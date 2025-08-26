@@ -536,4 +536,169 @@ function initCalendlyFallback() {
 // Initialize Calendly fallback when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initCalendlyFallback();
+    
+    // Contact Form with Resend
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmit);
+        
+        // Real-time validation
+        const inputs = contactForm.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', validateField);
+            input.addEventListener('input', clearFieldError);
+        });
+    }
 });
+
+// Form submission handler
+async function handleFormSubmit(e) {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+        return;
+    }
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline-block';
+    
+    try {
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+        
+        // TODO: Replace with your Resend API key
+        const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        });
+        
+        if (response.ok) {
+            showFormSuccess();
+            e.target.reset();
+        } else {
+            throw new Error('Erreur lors de l\'envoi');
+        }
+    } catch (error) {
+        console.error('Form submission error:', error);
+        showFormError();
+    } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.style.display = 'inline-block';
+        btnLoading.style.display = 'none';
+    }
+}
+
+// Form validation
+function validateForm() {
+    let isValid = true;
+    const requiredFields = ['name', 'email', 'phone', 'urgency', 'service', 'message'];
+    
+    requiredFields.forEach(fieldName => {
+        const field = document.getElementById(fieldName);
+        if (!validateField(field)) {
+            isValid = false;
+        }
+    });
+    
+    return isValid;
+}
+
+// Field validation
+function validateField(field) {
+    if (!field) return true;
+    
+    const fieldName = field.name;
+    const value = field.value.trim();
+    const errorElement = document.getElementById(`${fieldName}-error`);
+    
+    let isValid = true;
+    let errorMessage = '';
+    
+    // Required field validation
+    if (field.hasAttribute('required') && !value) {
+        isValid = false;
+        errorMessage = 'Ce champ est obligatoire';
+    }
+    
+    // Email validation
+    if (fieldName === 'email' && value && !isValidEmail(value)) {
+        isValid = false;
+        errorMessage = 'Veuillez entrer un email valide';
+    }
+    
+    // Phone validation
+    if (fieldName === 'phone' && value && !isValidPhone(value)) {
+        isValid = false;
+        errorMessage = 'Veuillez entrer un numéro valide';
+    }
+    
+    // Show/hide error message
+    if (errorElement) {
+        errorElement.textContent = errorMessage;
+        errorElement.style.display = isValid ? 'none' : 'block';
+    }
+    
+    // Add/remove error class
+    field.classList.toggle('error', !isValid);
+    
+    return isValid;
+}
+
+// Clear field error
+function clearFieldError(e) {
+    const field = e.target;
+    const errorElement = document.getElementById(`${field.name}-error`);
+    
+    if (errorElement) {
+        errorElement.style.display = 'none';
+    }
+    
+    field.classList.remove('error');
+}
+
+// Validation helpers
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function isValidPhone(phone) {
+    const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+    return phoneRegex.test(phone);
+}
+
+// Show success message
+function showFormSuccess() {
+    const successElement = document.getElementById('formSuccess');
+    const errorElement = document.getElementById('formError');
+    
+    if (successElement) successElement.style.display = 'block';
+    if (errorElement) errorElement.style.display = 'none';
+    
+    // Scroll to success message
+    successElement?.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Show error message
+function showFormError() {
+    const successElement = document.getElementById('formSuccess');
+    const errorElement = document.getElementById('formError');
+    
+    if (errorElement) errorElement.style.display = 'block';
+    if (successElement) successElement.style.display = 'none';
+    
+    // Scroll to error message
+    errorElement?.scrollIntoView({ behavior: 'smooth' });
+}
+
+
