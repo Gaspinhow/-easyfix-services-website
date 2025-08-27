@@ -4,10 +4,14 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- Force HTTPS redirect -->
+<!-- Force HTTPS and canonical URL redirect -->
 <script>
-if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
-    location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+// Force redirection vers https://easyfixservices.fr (sans www)
+if (location.hostname !== 'localhost') {
+    var correctURL = 'https://easyfixservices.fr' + location.pathname + location.search + location.hash;
+    if (location.protocol !== 'https:' || location.hostname === 'www.easyfixservices.fr') {
+        location.replace(correctURL);
+    }
 }
 </script>
 <title>EasyFix Services - Plombier Professionnel Île-de-France</title>
@@ -26,6 +30,9 @@ if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
 <meta property="og:description" content="Plombier professionnel en Île-de-France. Dépannage urgence 24h/7j, installation, entretien. Devis gratuit ☎️ 07 45 28 65 35"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://easyfixservices.fr"/>
+
+<!-- URL canonique pour éviter les problèmes de redirection -->
+<link rel="canonical" href="https://easyfixservices.fr"/>
 <meta property="og:image" content="https://easyfixservices.fr/images/easyfix-logo.png"/>
 <meta property="og:locale" content="fr_FR"/>
 
