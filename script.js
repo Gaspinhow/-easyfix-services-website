@@ -17,11 +17,14 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.addEventListener('click', function(e) {
             e.preventDefault();
             e.stopPropagation();
-            console.log('Hamburger cliqué!');
+            console.log('🍔 BURGER CLIQUÉ!');
             
             // Toggle active class
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            console.log('Menu active:', navMenu.classList.contains('active'));
+            console.log('Burger active:', this.classList.contains('active'));
             
             // Debug
             console.log('Hamburger active:', this.classList.contains('active'));
