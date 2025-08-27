@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://easyfixservices.fr/sitemap.xml
+
+# Optimisation pour les moteurs de recherche
+Crawl-delay: 1
+
+# Bloquer les fichiers système
+Disallow: /.git/
+Disallow: /.DS_Store
+Disallow: /README.md
+Disallow: /*.md$
+
+# Permettre l'accès aux images
+Allow: /images/
+
+# Permettre l'accès aux CSS et JS pour le rendu
+Allow: /*.css$
+Allow: /*.js$
