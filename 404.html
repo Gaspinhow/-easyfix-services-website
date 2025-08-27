@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Page introuvable - EasyFix Services</title>
+<meta name="description" content="Page non trouvée, redirection automatique vers l'accueil d'EasyFix Services">
+<link rel="canonical" href="https://easyfixservices.fr/">
+<meta http-equiv="refresh" content="3; url=/">
+<meta name="robots" content="noindex">
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #0066FF, #003d99);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+h1 { font-size: 3rem; margin-bottom: 1rem; }
+p { font-size: 1.2rem; margin-bottom: 2rem; }
+.btn {
+    background: #FFD700;
+    color: #003d99;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+.btn:hover { background: #FFC107; }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>404</h1>
+    <h2>Page introuvable</h2>
+    <p>La page que vous recherchez n'existe pas ou a été déplacée.</p>
+    <p>Redirection automatique vers l'accueil dans <span id="countdown">3</span> secondes...</p>
+    <a href="/" class="btn">Retour à l'accueil</a>
+</div>
+
+<script>
+// Redirection immédiate
+setTimeout(() => location.replace("/"), 3000);
+
+// Compte à rebours
+let count = 3;
+const countdownEl = document.getElementById('countdown');
+const timer = setInterval(() => {
+    count--;
+    if (countdownEl) countdownEl.textContent = count;
+    if (count <= 0) clearInterval(timer);
+}, 1000);
+</script>
+</body>
+</html>
