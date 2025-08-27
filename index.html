@@ -111,7 +111,46 @@ console.log('Site loaded successfully');
 }
 </script>
 <link href="styles.css" rel="stylesheet"/>
-<link href="fix_burger.css" rel="stylesheet"/>
+<style>
+/* BURGER MENU FORCE FIX */
+@media (max-width: 850px) {
+    .hamburger {
+        display: flex !important;
+        z-index: 10000 !important;
+    }
+    
+    .nav-menu {
+        position: fixed !important;
+        top: 70px !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: calc(100vh - 70px) !important;
+        background: rgba(13, 110, 253, 0.98) !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        text-align: center !important;
+        transition: left 0.3s ease !important;
+        z-index: 9999 !important;
+        padding: 2rem 0 !important;
+        display: flex !important;
+    }
+
+    .nav-menu.active {
+        left: 0 !important;
+    }
+    
+    .nav-item {
+        width: 100% !important;
+        padding: 1rem 0 !important;
+    }
+    
+    .nav-link {
+        color: white !important;
+        font-size: 1.2rem !important;
+    }
+}
+</style>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
