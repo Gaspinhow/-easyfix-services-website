@@ -4,6 +4,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Force HTTPS redirect -->
+<script>
+if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+    location.replace('https:' + window.location.href.substring(window.location.protocol.length));
+}
+</script>
 <title>EasyFix Services - Plombier Professionnel Île-de-France</title>
 <meta content="EasyFix Services - Plombier professionnel en Île-de-France ⚡ Dépannage urgence 24h/7j, installation sanitaire, entretien chaudière, rénovation salle de bain. Devis gratuit ☎️ 07 45 28 65 35" name="description"/>
 <!-- SEO optimisé pour plombier Île-de-France -->
