@@ -2,9 +2,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM chargé');
     
-    // Mobile menu toggle
+    // Mobile menu toggle - DEBUGGING
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
+    
+    console.log('🍔 MENU BURGER DEBUG:');
+    console.log('Hamburger trouvé:', hamburger);
+    console.log('Nav menu trouvé:', navMenu);
+    console.log('Taille écran:', window.innerWidth);
     
     if (hamburger && navMenu) {
         console.log('Éléments trouvés, ajout des événements');
