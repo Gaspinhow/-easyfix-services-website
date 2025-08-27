@@ -4,15 +4,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- Force HTTPS and canonical URL redirect -->
+<!-- No redirect - keep it simple -->
 <script>
-// Force redirection vers https://easyfixservices.fr (sans www)
-if (location.hostname !== 'localhost') {
-    var correctURL = 'https://easyfixservices.fr' + location.pathname + location.search + location.hash;
-    if (location.protocol !== 'https:' || location.hostname === 'www.easyfixservices.fr') {
-        location.replace(correctURL);
-    }
-}
+console.log('Site loaded successfully');
 </script>
 <title>EasyFix Services - Plombier Professionnel Île-de-France</title>
 <!-- Updated: Force refresh -->
