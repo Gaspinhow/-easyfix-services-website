@@ -6,165 +6,41 @@
     <title>En savoir plus - EasyFix Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Reset et styles de base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        /* Styles spécifiques pour la page en-savoir-plus */
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
             background: #f8f9fa;
         }
         
-        /* Header styles - Identique à index.html */
+        /* Ajuster le header pour qu'il soit identique à index.html */
         .header {
-            background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
-            box-shadow: 0 4px 20px rgba(0, 102, 255, 0.3);
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
             z-index: 1000;
+            transition: none;
         }
         
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 15px;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            min-height: 80px;
+            height: 80px;
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+        /* Styles du header maintenant gérés par styles.css */
         
-        .logo-icon {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo-image {
-            height: auto;
-            max-width: 100%;
-            object-fit: contain;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-item {
-            position: relative;
-        }
-        
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            padding: 0.8rem 1.2rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            padding: 1rem 0;
-            min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-        }
-        
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .dropdown-menu a {
-            color: #333;
-            padding: 0.8rem 1.5rem;
-            display: block;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .dropdown-menu a:hover {
-            background: #f8f9fa;
-            color: #0066FF;
-        }
-        
-        .nav-contact {
-            display: flex;
-            align-items: center;
-        }
-        
-        .phone-btn {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .phone-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            border-color: rgba(255, 255, 255, 0.5);
-            transform: translateY(-2px);
-        }
-        
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 4px;
-        }
-        
-        .bar {
-            width: 25px;
-            height: 3px;
-            background: white;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-        
-        /* Main content styles */
+        /* Main content styles - Harmonisé avec index.html */
         .main-content {
+            padding-top: 80px; /* Pour compenser le header fixed */
             min-height: calc(100vh - 80px);
         }
         
@@ -176,7 +52,7 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 20px; /* Identique à index.html */
         }
         
         .section-header {
@@ -249,18 +125,18 @@
         }
         
         .pack-header h2 {
-            font-size: 2rem;
+            font-size: 1.8rem; /* Réduit pour harmoniser */
             font-weight: 700;
             color: #333;
             margin: 0;
         }
         
         .pack-price {
-            font-size: 1.8rem;
+            font-size: 1.6rem; /* Réduit pour harmoniser */
             font-weight: 700;
             color: #0066FF;
             background: linear-gradient(135deg, #e7f3ff 0%, #d1e9ff 100%);
-            padding: 1rem 2rem;
+            padding: 0.8rem 1.5rem; /* Réduit pour harmoniser */
             border-radius: 30px;
             border: 2px solid rgba(0, 102, 255, 0.2);
             box-shadow: 0 5px 15px rgba(0, 102, 255, 0.1);
@@ -271,7 +147,7 @@
         }
         
         .pack-description p {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Réduit pour harmoniser */
             color: #666;
             line-height: 1.6;
             margin: 0;
@@ -282,7 +158,7 @@
         }
         
         .pack-services h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem; /* Réduit pour harmoniser */
             font-weight: 600;
             color: #333;
             margin-bottom: 1.5rem;
@@ -293,7 +169,7 @@
         
         .pack-services h3::before {
             content: "🔧";
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Réduit pour harmoniser */
         }
         
         .pack-services ul {
@@ -335,7 +211,7 @@
         }
         
         .pack-recommendations h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem; /* Réduit pour harmoniser */
             font-weight: 600;
             color: #333;
             margin-bottom: 1rem;
@@ -346,14 +222,14 @@
         
         .pack-recommendations h3::before {
             content: "💡";
-            font-size: 1.1rem;
+            font-size: 1rem; /* Réduit pour harmoniser */
         }
         
         .pack-recommendations p {
             color: #666;
             line-height: 1.6;
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1rem; /* Réduit pour harmoniser */
         }
         
         .pack-actions {
@@ -364,15 +240,15 @@
         }
         
         .btn {
-            padding: 1.2rem 2.5rem;
-            font-size: 1.1rem;
+            padding: 1rem 2rem; /* Réduit pour harmoniser */
+            font-size: 1rem; /* Réduit pour harmoniser */
             font-weight: 600;
             border-radius: 50px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 0.8rem;
-            min-width: 180px;
+            min-width: 160px; /* Réduit pour harmoniser */
             justify-content: center;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
@@ -477,10 +353,10 @@
             border-top: 1px solid #555;
         }
         
-        /* Responsive */
+        /* Responsive - Harmonisé avec index.html */
         @media (max-width: 768px) {
             .nav-container {
-                padding: 0 1rem;
+                padding: 0 15px; /* Identique à index.html */
             }
             
             .nav-menu {
@@ -496,7 +372,7 @@
             }
             
             .en-savoir-plus-section .section-header h1 {
-                font-size: 2rem;
+                font-size: 1.8rem; /* Réduit pour harmoniser */
             }
             
             .pack-header {
@@ -506,8 +382,8 @@
             }
             
             .pack-price {
-                font-size: 1.5rem;
-                padding: 0.8rem 1.5rem;
+                font-size: 1.4rem; /* Réduit pour harmoniser */
+                padding: 0.6rem 1.2rem; /* Réduit pour harmoniser */
             }
             
             .pack-services ul {
@@ -521,11 +397,11 @@
             
             .pack-actions .btn {
                 width: 100%;
-                max-width: 300px;
+                max-width: 280px; /* Réduit pour harmoniser */
             }
             
             .important-info {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem 1rem; /* Réduit pour harmoniser */
             }
         }
         
